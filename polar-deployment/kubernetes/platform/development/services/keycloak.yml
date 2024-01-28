@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: polar-keycloak
-          image: quay.io/keycloak/keycloak:latest
+          image: quay.io/keycloak/keycloak:20.0
           args:
             - "start-dev"
             - "--import-realm"
