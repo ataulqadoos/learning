@@ -18,7 +18,7 @@ services:
       - BPL_JVM_THREAD_COUNT=50
       - BPL_DEBUG_ENABLED=true
       - BPL_DEBUG_PORT=8001
-#      - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.32.0.jar
+      - JAVA_TOOL_OPTIONS=-javaagent:/workspace/BOOT-INF/lib/opentelemetry-javaagent-1.32.0.jar
       - OTEL_SERVICE_NAME=catalog-service
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://tempo:4317
       - OTEL_METRICS_EXPORTER=none
@@ -91,7 +91,7 @@ services:
       - polar-keycloak
       - polar-redis
       - polar-ui
-    image: "edge-service"
+    image: "edge-service:0.0.1-SNAPSHOT"
     container_name: "edge-service"
     ports:
       - 9000:9000
@@ -189,11 +189,11 @@ services:
       - 8080:8080
 
   # Observability
-
   grafana:
     image: grafana/grafana-oss:10.2.2
     container_name: grafana
     depends_on:
+      - polar-postgres
       - loki
       - prometheus
       - tempo
