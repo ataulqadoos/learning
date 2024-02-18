@@ -1,0 +1,7 @@
+polar:
+  greeting: Welcome to our book catalog from a production Kubernetes environment!
+spring:
+  config:
+    import: configtree:/workspace/secrets/*/
+  datasource:
+    url: private-polar-db-do-user-15791030-0.c.db.ondigitalocean.com

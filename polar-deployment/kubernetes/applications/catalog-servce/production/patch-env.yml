@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: catalog-service
+          env:
+            - name: BPL_JVM_THREAD_COUNT
+              value: "100"
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://polar-db-do-user-15791030-0.c.db.ondigitalocean.com:25060/polardb_catalog
