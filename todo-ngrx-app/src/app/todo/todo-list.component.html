@@ -10,3 +10,5 @@
 <div *ngFor="let todo of completedTodos$ | async">
   {{ todo.title }}
 </div>
+
+<input type="text" *appDisp="true" [appTooltip]="'enter some text'">

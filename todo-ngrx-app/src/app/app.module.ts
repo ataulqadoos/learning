@@ -9,11 +9,15 @@ import {reducer, todoFeatureKey,} from "./todo/todo.reducer";
 import { EffectsModule } from '@ngrx/effects';
 import {TodoEffects} from "./todo/todo.effects";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TooltipDirective } from './directives/tooltip.directive';
+import { DispDirective } from './directives/disp.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    TooltipDirective,
+    DispDirective
   ],
   imports: [
     BrowserModule,
